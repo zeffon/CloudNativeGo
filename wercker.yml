@@ -85,7 +85,7 @@ deploy:
         cmd: /pipline/source/main
         port: "8080"
         tag: latest
-        repository: zeffon/CloudNativeGo
+        repository: zephoonyu/cloudnativego
         registry: https://registry.hub.docker.com
 
     - cng/cf-deploy:
@@ -95,4 +95,4 @@ deploy:
         org: $ORG
         space: $SPACE
         appname: wercker-step-hello
-        docker_iamge: github.com/zeffon/CloudNativeGo
+        docker_iamge: github.com/zeffon/cloudnativego
