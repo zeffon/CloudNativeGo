@@ -51,7 +51,7 @@ build:
     - script:
         name: env
         code: env
-    
+
     - script:
         name: go get
         code: |
