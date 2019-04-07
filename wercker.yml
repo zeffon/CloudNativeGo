@@ -82,7 +82,7 @@ deploy:
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
-        cmd: /cloudnativego/main
+        cmd: /pipeline/output/main
         port: "8080"
         tag: latest
         repository: zephoonyu/cloudnativego
