@@ -88,11 +88,11 @@ deploy:
         repository: zephoonyu/cloudnativego
         registry: https://registry.hub.docker.com
 
-    - cng/cf-deploy:
-        api: $API
-        user: $USER
-        password: $PASSWORD
-        org: $ORG
-        space: $SPACE
-        appname: wercker-step-hello
-        docker_iamge: github.com/zeffon/cloudnativego
+    # - cng/cf-deploy:
+    #     api: $API
+    #     user: $USER
+    #     password: $PASSWORD
+    #     org: $ORG
+    #     space: $SPACE
+    #     appname: wercker-step-hello
+    #     docker_iamge: github.com/zeffon/cloudnativego
