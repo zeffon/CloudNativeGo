@@ -25,10 +25,10 @@ dev:
         name: env
         code: env
     - script:
-        name: go get 
+        name: go get
         code: |
           cd $WERCKER_SOURCE_DIR
-          go version 
+          go version
           go get -u github.com/Masterminds/glide
           export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
           glide install
@@ -56,7 +56,7 @@ build:
         name: go get
         code: |
           cd $WERCKER_SOURCE_DIR
-          go version 
+          go version
           go get -u github.com/Masterminds/glide
           export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
           glide install
@@ -82,7 +82,7 @@ deploy:
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
-        cmd: /pipeline/source/main
+        cmd: ["/pipeline/source/main"]
         port: "8080"
         tag: latest
         repository: zephoonyu/cloudnativego
