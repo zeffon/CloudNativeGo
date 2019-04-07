@@ -20,7 +20,7 @@ box: golang
 dev:
   steps:
     - setup-go-workspace:
-        package-dir: github.com/cloudnativego/hello
+        package-dir: github.com/zeffon/CloudNativeGo
     - script:
         name: env
         code: env
@@ -45,7 +45,7 @@ build:
     # Sets the go workspace and places you package
     # at the right place in the workspace tree
     - setup-go-workspace:
-        package-dir: github.com/cloudnativego/hello
+        package-dir: github.com/zeffon/CloudNativeGo
 
     # Gets the dependencies
     - script:
@@ -77,22 +77,22 @@ build:
         code: |
           cp -R ./ ${WERCKER_SOURCE_DIR}
     
-deploy:
-  steps:
-    - internal/docker-push:
-        username: $DOCKER_USERNAME
-        password: $DOCKER_PASSWORD
-        cmd: /pipline/source/hello
-        port: "8080"
-        tag: latest
-        repository: cloudnativego/book-hello
-        registry: https://registry.hub.docker.com
+# deploy:
+#   steps:
+#     - internal/docker-push:
+#         username: $DOCKER_USERNAME
+#         password: $DOCKER_PASSWORD
+#         cmd: /pipline/source/hello
+#         port: "8080"
+#         tag: latest
+#         repository: cloudnativego/book-hello
+#         registry: https://registry.hub.docker.com
       
-    - cng/cf-deploy:
-        api: $API
-        user: $USER
-        password: $PASSWORD
-        org: $ORG
-        space: $SPACE
-        appname: wercker-step-hello
-        docker_iamge: cloudnativego/book-hello
+#     - cng/cf-deploy:
+#         api: $API
+#         user: $USER
+#         password: $PASSWORD
+#         org: $ORG
+#         space: $SPACE
+#         appname: wercker-step-hello
+#         docker_iamge: cloudnativego/book-hello
