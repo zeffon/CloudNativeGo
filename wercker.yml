@@ -65,13 +65,13 @@ build:
     - script:
         name: go build
         code: |
-          go build
+          go build main.go
 
     # Test the project
     - script:
         name: go test
         code: |
-          go test
+          go test main_test.go
     - script:
         name: copy files to wercker output
         code: |
